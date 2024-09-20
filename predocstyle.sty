@@ -1,0 +1,58 @@
+% Prevent double inclusion of the style file
+\ProvidesPackage{predocstyle}
+
+% Use the titlesec package for section formatting
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr} % 8. Your name must appear outside the set margins of the page, at the top right corner of every page;
+\RequirePackage{parskip} % Add readable space between paragraphs.
+\RequirePackage{amsmath}
+
+\renewcommand{\headrulewidth}{0pt} % Remove the head rule.
+
+% Set the style for sections
+\titleformat{\section}
+  {\fontsize{12}{12}\selectfont\bfseries}  % 14pt font size, bold
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\fontsize{12}{12}\selectfont\bfseries}  % 12pt font size, bold
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\fontsize{12}{12}\selectfont\bfseries}  % 10pt font size, bold
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\section}
+  {0pt}            % No indentation (left margin)
+  {0.5\baselineskip}   % Space before the section (above), equal to line spacing
+  {0.5\baselineskip}   % Space after the section (below), equal to line spacing
+\titlespacing*{\subsection}
+  {0pt}            % No indentation (left margin)
+  {0.5\baselineskip}   % Space before the section (above), equal to line spacing
+  {0.5\baselineskip}   % Space after the section (below), equal to line spacing
+\titlespacing*{\subsubsection}
+  {0pt}            % No indentation (left margin)
+  {0.5\baselineskip}   % Space before the section (above), equal to line spacing
+  {0.5\baselineskip}   % Space after the section (below), equal to line spacing
+
+\newcommand{\predoctitle}[1]{
+    \begin{center}
+        \textbf{\fontsize{18}{18}\selectfont #1}
+    \end{center}
+}
+
+\newcommand{\committee}[1]{
+    \begin{center}
+        \text{#1}
+    \end{center}
+}
+
+\newcommand{\summary}[1]{
+    \begin{center}
+        \textbf{Summary}
+    \end{center}
+    \begin{center}
+        \text{#1}
+    \end{center}
+}
+
+% Set the default font size and leading
+\usepackage{setspace} % 3. Pages must be single-spaced, with no more than six lines of type per inch;
+\singlespacing % 3. Pages must be single-spaced, with no more than six lines of type per inch;
