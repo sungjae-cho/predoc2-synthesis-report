@@ -1,6 +1,8 @@
 \documentclass[12pt]{article} % 4. All text must be in 12 pt
 \usepackage{predocstyle}
 \usepackage{amsmath}
+\usepackage{multibib}
+\newcites{Corpus}{Corpus}  % Create a separate bibliography for Corpus
 
 \usepackage[letterpaper, margin=1.9cm]{geometry} % 2. Pages must be 8 ½" x 11" (216mm x 279mm) % 7. Margins must be set at a minimum of ¾" (1.87 cm);
 \usepackage{times} % 4. All text must be in Times New Roman font
@@ -33,18 +35,42 @@
 }
 
 \newpage
+\thispagestyle{empty} % Remove the page number.
+{
+    \renewcommand{\refname}{Corpus}
+    \nociteCorpus{*}  % Apply nocite only to Corpus
+    \bibliographystyleCorpus{ieeetr}
+    \bibliographyCorpus{corpus}
+    \renewcommand{\refname}{References}
+}
+
+\newpage
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
 A corpus of 5 to 10 articles to study. Eligible manuscripts include those published in renowned journals or conference proceedings, or book chapters. Additionally, the eligible articles should be a minimum of 8 pages in the publication format.
 
-\section{Section}
+\section{Convolutional networks \cite{LeCun1998GradientbasedLA}}
 
 Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section 
 
-\section{Section}
+\section{Neural Probabilistic Language Model \cite{Bengio2003ANP}}
 
-Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section 
+Section
+
+\section{Curriculum Learning \cite{Bengio2009CurriculumL}}
+
+\section{Random Search for Hyper-Parameter Optimization \cite{Bergstra2012RandomSF}}
+
+\section{The difficulty of training recurrent neural networks \cite{Pascanu2012OnTD}}
+
+\section{Generative adversarial nets \cite{goodfellow2014generative}}
+
+\section{Gated linear units \cite{Cho2014LearningPR}}
+
+\section{Attention model \cite{Bahdanau2014NeuralMT}}
+
+\section{GFlowNet \cite{Bengio2021GFlowNetF}}
 
 \subsection{Subsection}
 
@@ -54,7 +80,8 @@ Subsection
 
 Subsubsection.
 
-Citation~\cite{lecun2015deep}.
+Supporting reference citation~\cite{lecun2015}.
+
 
 \bibliographystyle{ieeetr}
 \bibliography{ref}
