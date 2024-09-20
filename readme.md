@@ -12,4 +12,4 @@ This is a LaTex template for the predoc 2 synthesis report of [DIRO (Départemen
 ## Caution
 
 - Add only the articles to study in `corpus.bib`.
-- Articles to support the synthesis report should be added to 'ref.bib'.
+- Articles to support the synthesis report should be added to `ref.bib`.
