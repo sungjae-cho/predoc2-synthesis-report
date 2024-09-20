@@ -1,3 +1,7 @@
+% Author: Sungjae Cho
+% E-mail: sungjae.cho@umontreal.ca
+% Fill in `variable.tex` first.
+
 \documentclass[12pt]{article} % 4. All text must be in 12 pt
 \usepackage{predocstyle}
 \usepackage{amsmath}
@@ -7,31 +11,35 @@
 \usepackage[letterpaper, margin=1.9cm]{geometry} % 2. Pages must be 8 ½" x 11" (216mm x 279mm) % 7. Margins must be set at a minimum of ¾" (1.87 cm);
 \usepackage{times} % 4. All text must be in Times New Roman font
 
+\input{variables}
+
 \pagestyle{fancy} % 8. Your name must appear outside the set margins of the page, at the top right corner of every page;
-\lhead{Predoc 2: Synthesis Report}
-\rhead{Student Name} % 8. Your name must appear outside the set margins of the page, at the top right corner of every page;
+\lhead{Predoc 2: Synthesis Report, \Semester \ \Year}
+
+
+\rhead{\StudentName} % 8. Your name must appear outside the set margins of the page, at the top right corner of every page;
 
 \begin{document}
 
 \thispagestyle{empty}
 
-\predoctitle{A title that defines the scope of the research field.}
+\predoctitle{\PredocTitle}
 
 \begin{center}
-    Predoc 2 synthesis report in Autumn/Winter/Summer 20XX
+    The predoc 2 synthesis report in \Semester \ \Year
 \end{center}
 
 \begin{center}
 \begin{tabular}{r@{\hspace{5pt}}l}  % Right-align the first column and left-align the second
-    Student:&     Student Name \\
-    Supervisor:&  Supervisor Name \\
-    Chair:&       Chair Name \\
-    Member:&      Member Name
+    Student:&     \StudentName \\
+    Supervisor:&  \SupervisorName \\
+    Chair:&       \ChairName \\
+    Member:&      \MemberName
 \end{tabular}
 \end{center}
 
 \summary{
-    A summary of the research field, 250 to 300 words in length.
+    \input{summary}
 }
 
 \newpage
@@ -41,6 +49,7 @@
     \nociteCorpus{*}  % Apply nocite only to Corpus
     \bibliographystyleCorpus{ieeetr}
     \bibliographyCorpus{corpus}
+    
     \renewcommand{\refname}{References}
 }
 
@@ -48,40 +57,7 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-A corpus of 5 to 10 articles to study. Eligible manuscripts include those published in renowned journals or conference proceedings, or book chapters. Additionally, the eligible articles should be a minimum of 8 pages in the publication format.
-
-\section{Convolutional networks \cite{LeCun1998GradientbasedLA}}
-
-Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section Section 
-
-\section{Neural Probabilistic Language Model \cite{Bengio2003ANP}}
-
-Section
-
-\section{Curriculum Learning \cite{Bengio2009CurriculumL}}
-
-\section{Random Search for Hyper-Parameter Optimization \cite{Bergstra2012RandomSF}}
-
-\section{The difficulty of training recurrent neural networks \cite{Pascanu2012OnTD}}
-
-\section{Generative adversarial nets \cite{goodfellow2014generative}}
-
-\section{Gated linear units \cite{Cho2014LearningPR}}
-
-\section{Attention model \cite{Bahdanau2014NeuralMT}}
-
-\section{GFlowNet \cite{Bengio2021GFlowNetF}}
-
-\subsection{Subsection}
-
-Subsection
-
-\subsubsection{Subsubsection}
-
-Subsubsection.
-
-Supporting reference citation~\cite{lecun2015}.
-
+\input{report}
 
 \bibliographystyle{ieeetr}
 \bibliography{ref}
